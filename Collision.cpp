@@ -20,8 +20,8 @@ bool Collision::CheckCollision(Collision& other,sf::Vector2f& direction, float p
 	float deltaX = otherPosition.x - thisPosition.x;
 	float deltaY = otherPosition.y - thisPosition.y;
 
-	float intersectX = abs(deltaX) - (otherHalfSize.x + thisHalfSize.x);
-	float intersectY = abs(deltaY) - (otherHalfSize.y + thisHalfSize.y);
+	float intersectX = abs(deltaX) - ((otherHalfSize.x-10) + thisHalfSize.x);
+	float intersectY = abs(deltaY) - ((otherHalfSize.y-10) + thisHalfSize.y);
 
 	if (intersectX < 0.0f && intersectY < 0.0f) {
 
@@ -55,7 +55,7 @@ bool Collision::CheckCollision(Collision& other,sf::Vector2f& direction, float p
 			}
 			else {
 				move(0.0f ,-intersectY * (1.0f - push));
-				other.move(0.0f,intersectX * push);
+				other.move(0.0f,intersectY * push);
 
 				direction.y = -1.0f;
 				direction.x = 0.0f;

@@ -11,7 +11,7 @@ public:
 
 	bool CheckCollision(Collision& Other,sf::Vector2f& direction, float push);
 	sf::Vector2f GetPosition() { return body.getPosition(); }
-	sf::Vector2f GetHalfsize() { return body.getSize() / 2.0f; }
+	sf::Vector2f GetHalfsize() { return (body.getSize() / 2.0f); }
 
 	
 private:
